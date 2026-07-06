@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="assets/images/rentme favicon.png">
+  <title>Hotel Booking - Rent Me Naija</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/bookmark.css" />
+  <link rel="stylesheet" href="css/hotel-booking.css" />
+  
+</head>
+<body>
+  
+  <!-- ============== Header / Navbar ============== -->
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <img src="assets/images/rentlogo.png" alt="RentMe Naija logo" class="logo">
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <a class="nav-item" href="index.html">Home</a>
+      <a class="nav-item" href="about.html">About us</a>
+      <a class="nav-item" href="#">Houses</a>
+      <a class="nav-item" href="hotel-booking.html">Hotel Booking</a>
+      <a class="nav-item" href="#">Contact us</a>
+    </nav>
+
+    <div class="header-actions">
+  <div class="user-section">
+
+    <!-- Dynamic user avatar - will show either uploaded image or default icon -->
+    <div class="user-avatar" id="user-avatar">
+      <!-- Default fallback - will be replaced by API data -->
+      <svg class="usericon fallback-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+        <path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM2 20a9.99 9.99 0 0 1 20 0z"/>
+      </svg>
+    </div>
+    <div class="user-text">
+    <div class="welcome">Welcome</div>
+<a class="signin" href="login.html" id="auth-link">Sign in / Register</a>
+  </div>
+  </div>
+  
+  <!-- Bookmark Icon -->
+  <div class="bookmark-icon">
+    <button class="bookmark-icon header-bookmark" aria-label="Saved items">
+        <svg viewBox="0 0 24 24" width="18" height="18">
+            <path d="M6 2h12v20l-6-4-6 4z"/>
+        </svg>
+        <span class="bookmark-count">0</span>
+    </button>
+  </div>
+</div>
+</header>
+
+  <!-- ============== Hero Section with Filter ============== -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h2 class="muted">Welcome to</h2>
+        <h1 class="hero-title">RENT ME NAIJA</h1>
+
+        <form class="search-form" role="search" aria-label="Search hotels">
+          <!-- Filter Button -->
+          <button class="filter-btn" type="button" id="filter-toggle" aria-label="Filters" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+              <path d="M3 5h18v2L14 13v6l-4-2v-4L3 7z"/>
+            </svg>
+          </button>
+
+          <!-- Filter Panel -->
+          <div class="filter-panel" id="filter-panel">
+            <div class="filter-panel-header">
+              <h2>Filter Hotels</h2>
+              <button class="close-filter-panel" type="button" aria-label="Close filter panel">
+                <svg viewBox="0 0 24 24" width="18" height="18">
+                  <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="filter-section">
+              <h3>Location</h3>
+              <select id="state-select">
+                <option value="">Choose State</option>
+                <option value="lagos">Lagos</option>
+                <option value="abuja">Abuja</option>
+                <option value="rivers">Rivers</option>
+                <option value="akwa-ibom">Akwa Ibom</option>
+              </select>
+
+              <select id="city-select">
+                <option value="">Select City</option>
+                <option value="ikeja">Ikeja</option>
+                <option value="yaba">Yaba</option>
+                <option value="victoria-island">Victoria Island</option>
+                <option value="gwarinpa">Gwarinpa</option>
+                <option value="uyo">Uyo</option>
+              </select>
+            </div>
+
+            <div class="filter-section">
+              <h3>Price Range (per night)</h3>
+              <select id="price-range">
+                <option value="">Choose price range</option>
+                <option value="5000-10000">₦5,000 - ₦10,000</option>
+                <option value="11000-20000">₦11,000 - ₦20,000</option>
+                <option value="21000-40000">₦21,000 - ₦40,000</option>
+                <option value="41000-80000">₦41,000 - ₦80,000</option>
+                <option value="81000-150000">₦81,000 - ₦150,000</option>
+              </select>
+            </div>
+
+            <div class="filter-section">
+              <h3>Hotel Rating</h3>
+              <select id="hotel-rating">
+                <option value="">Any Rating</option>
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars & Up</option>
+                <option value="3">3 Stars & Up</option>
+                <option value="2">2 Stars & Up</option>
+                <option value="1">1 Star & Up</option>
+              </select>
+            </div>
+
+            <div class="filter-actions">
+              <button type="button" class="apply-filters" id="apply-filters">Apply Filters</button>
+              <button type="button" class="clear-filters" id="clear-filters">Clear All</button>
+            </div>
+          </div>
+
+          <input id="q" name="q" type="search" placeholder="What type of hotel are you looking for?" />
+          <button class="search-btn" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Hotel Booking Section ============== -->
+  <section class="hotel-booking-main">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="section-head">
+        <span class="subtle">Available Hotels</span>
+        <h2>Find Your Perfect Stay</h2>
+      </div>
+
+      <!-- Hotels Grid - Detailed structure as per your explanation -->
+      <div class="hotels-grid-section">
+        <!-- Hotel Card 1 -->
+        <article class="hotel-card" data-id="hotel-1">
+          <div class="hotel-card-top">
+            <div class="hotel-image">
+              <img src="assets/images/hotel 1.jpg" alt="Grand Plaza Hotel">
+            </div>
+            <div class="hotel-info">
+              <h3 class="hotel-name">Grand Plaza Hotel</h3>
+              <div class="hotel-address">
+                19, Victor Kokomo st.<br>Victoria Island
+              </div>
+              <div class="hotel-price">N12,000 / Night</div>
+              <p class="hotel-description">Secure guesthouse with generator & free breakfast</p>
+            </div>
+          </div>
+          <div class="hotel-card-bottom">
+            <div class="hotel-meta-left">
+              <div class="owner-info">
+                <div class="owner-avatar">
+                  <img src="assets/images/man 2.jpg" alt="Owner">
+                </div>
+                <span class="owner-name">Richard Ayodele</span>
+              </div>
+              <div class="rating">
+                <svg viewBox="0 0 24 24" width="14" height="14">
+                  <path d="M12 17.3l6.18 3.73-1.64-7.03L21.5 9.5l-7.2-.61L12 2 9.7 8.89 2.5 9.5l4.96 4.5L5.82 21z"/>
+                </svg>
+                <span>4.0</span>
+              </div>
+            </div>
+            <div class="hotel-meta-right">
+              <span class="post-date">1 week ago</span>
+              <button class="card-bookmark" aria-label="Save hotel">
+                <svg viewBox="0 0 24 24" width="14" height="14">
+                  <path d="M6 2h12v20l-6-4-6 4z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Hotel Card 2 -->
+        <article class="hotel-card" data-id="hotel-2">
+          <div class="hotel-card-top">
+            <div class="hotel-image">
+              <img src="assets/images/hotel 3.jpg" alt="Grand Plaza Hotel">
+            </div>
+            <div class="hotel-info">
+              <h3 class="hotel-name">Grand Plaza Hotel</h3>
+              <div class="hotel-address">
+                19, Victor Kokomo st.<br>Victoria Island
+              </div>
+              <div class="hotel-price">N12,000 / Night</div>
+              <p class="hotel-description">Secure guesthouse with generator & free breakfast</p>
+            </div>
+          </div>
+          <div class="hotel-card-bottom">
+            <div class="hotel-meta-left">
+              <div class="owner-info">
+                <div class="owner-avatar">
+                  <img src="assets/images/man 3.jpg" alt="Owner">
+                </div>
+                <span class="owner-name">Richard Ayodele</span>
+              </div>
+              <div class="rating">
+                <svg viewBox="0 0 24 24" width="14" height="14">
+                  <path d="M12 17.3l6.18 3.73-1.64-7.03L21.5 9.5l-7.2-.61L12 2 9.7 8.89 2.5 9.5l4.96 4.5L5.82 21z"/>
+                </svg>
+                <span>4.7</span>
+              </div>
+            </div>
+            <div class="hotel-meta-right">
+              <span class="post-date">1 week ago</span>
+              <button class="card-bookmark" aria-label="Save hotel">
+                <svg viewBox="0 0 24 24" width="14" height="14">
+                  <path d="M6 2h12v20l-6-4-6 4z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Hotel Card 3 -->
+        <article class="hotel-card" data-id="hotel-3">
+            <div class="hotel-card-top">
+            <div class="hotel-image">
+              <img src="assets/images/hotel 1.jpg" alt="Grand Plaza Hotel">
+            </div>
+            <div class="hotel-info">
+              <h3 class="hotel-name">Grand Plaza Hotel</h3>
+              <div class="hotel-address">
+                19, Victor Kokomo st.<br>Victoria Island
+              </div>
+              <div class="hotel-price">N12,000 / Night</div>
+              <p class="hotel-description">Secure guesthouse with generator & free breakfast</p>
+            </div>
+          </div>
+          <div class="hotel-card-bottom">
+            <div class="hotel-meta-left">
+              <div class="owner-info">
+                <div class="owner-avatar">
+                  <img src="assets/images/man 2.jpg" alt="Owner">
+                </div>
+                <span class="owner-name">Richard Ayodele</span>
+              </div>
+              <div class="rating">
+                <svg viewBox="0 0 24 24" width="14" height="14">
+                  <path d="M12 17.3l6.18 3.73-1.64-7.03L21.5 9.5l-7.2-.61L12 2 9.7 8.89 2.5 9.5l4.96 4.5L5.82 21z"/>
+                </svg>
+                <span>4.7</span>
+              </div>
+            </div>
+            <div class="hotel-meta-right">
+              <span class="post-date">1 week ago</span>
+              <button class="card-bookmark" aria-label="Save hotel">
+                <svg viewBox="0 0 24 24" width="14" height="14">
+                  <path d="M6 2h12v20l-6-4-6 4z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Hotel Card 5 -->
+        <article class="hotel-card" data-id="hotel-5">
+           <div class="hotel-card-top">
+            <div class="hotel-image">
+              <img src="assets/images/hotel 1.jpg" alt="Grand Plaza Hotel">
+            </div>
+            <div class="hotel-info">
+              <h3 class="hotel-name">Grand Plaza Hotel</h3>
+              <div class="hotel-address">
+                19, Victor Kokomo st.<br>Victoria Island
+              </div>
+              <div class="hotel-price">N12,000 / Night</div>
+              <p class="hotel-description">Secure guesthouse with generator & free breakfast</p>
+            </div>
+          </div>
+          <div class="hotel-card-bottom">
+            <div class="hotel-meta-left">
+              <div class="owner-info">
+                <div class="owner-avatar">
+                  <img src="assets/images/man 2.jpg" alt="Owner">
+                </div>
+                <span class="owner-name">Richard Ayodele</span>
+              </div>
+              <div class="rating">
+                <svg viewBox="0 0 24 24" width="14" height="14">
+                  <path d="M12 17.3l6.18 3.73-1.64-7.03L21.5 9.5l-7.2-.61L12 2 9.7 8.89 2.5 9.5l4.96 4.5L5.82 21z"/>
+                </svg>
+                <span>4.7</span>
+              </div>
+            </div>
+            <div class="hotel-meta-right">
+              <span class="post-date">1 week ago</span>
+              <button class="card-bookmark" aria-label="Save hotel">
+                <svg viewBox="0 0 24 24" width="14" height="14">
+                  <path d="M6 2h12v20l-6-4-6 4z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Hotel Card 6 -->
+        <article class="hotel-card" data-id="hotel-6">
+           <div class="hotel-card-top">
+            <div class="hotel-image">
+              <img src="assets/images/hotel 1.jpg" alt="Grand Plaza Hotel">
+            </div>
+            <div class="hotel-info">
+              <h3 class="hotel-name">Grand Plaza Hotel</h3>
+              <div class="hotel-address">
+                19, Victor Kokomo st.<br>Victoria Island
+              </div>
+              <div class="hotel-price">N12,000 / Night</div>
+              <p class="hotel-description">Secure guesthouse with generator & free breakfast</p>
+            </div>
+          </div>
+          <div class="hotel-card-bottom">
+            <div class="hotel-meta-left">
+              <div class="owner-info">
+                <div class="owner-avatar">
+                  <img src="assets/images/man 2.jpg" alt="Owner">
+                </div>
+                <span class="owner-name">Richard Ayodele</span>
+              </div>
+              <div class="rating">
+                <svg viewBox="0 0 24 24" width="14" height="14">
+                  <path d="M12 17.3l6.18 3.73-1.64-7.03L21.5 9.5l-7.2-.61L12 2 9.7 8.89 2.5 9.5l4.96 4.5L5.82 21z"/>
+                </svg>
+                <span>4.7</span>
+              </div>
+            </div>
+            <div class="hotel-meta-right">
+              <span class="post-date">1 week ago</span>
+              <button class="card-bookmark" aria-label="Save hotel">
+                <svg viewBox="0 0 24 24" width="14" height="14">
+                  <path d="M6 2h12v20l-6-4-6 4z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+         <article class="hotel-card" data-id="hotel-7">
+           <div class="hotel-card-top">
+            <div class="hotel-image">
+              <img src="assets/images/hotel 1.jpg" alt="Grand Plaza Hotel">
+            </div>
+            <div class="hotel-info">
+              <h3 class="hotel-name">Grand Plaza Hotel</h3>
+              <div class="hotel-address">
+                19, Victor Kokomo st.<br>Victoria Island
+              </div>
+              <div class="hotel-price">N12,000 / Night</div>
+              <p class="hotel-description">Secure guesthouse with generator & free breakfast</p>
+            </div>
+          </div>
+          <div class="hotel-card-bottom">
+            <div class="hotel-meta-left">
+              <div class="owner-info">
+                <div class="owner-avatar">
+                  <img src="assets/images/man 2.jpg" alt="Owner">
+                </div>
+                <span class="owner-name">Richard Ayodele</span>
+              </div>
+              <div class="rating">
+                <svg viewBox="0 0 24 24" width="14" height="14">
+                  <path d="M12 17.3l6.18 3.73-1.64-7.03L21.5 9.5l-7.2-.61L12 2 9.7 8.89 2.5 9.5l4.96 4.5L5.82 21z"/>
+                </svg>
+                <span>4.7</span>
+              </div>
+            </div>
+            <div class="hotel-meta-right">
+              <span class="post-date">1 week ago</span>
+              <button class="card-bookmark" aria-label="Save hotel">
+                <svg viewBox="0 0 24 24" width="14" height="14">
+                  <path d="M6 2h12v20l-6-4-6 4z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- See More Button -->
+      <div class="see-more-wrap">
+        <button class="see-more">See more</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== CTA Upload ============== -->
+  <section class="cta-upload">
+    <div class="cta-overlay"></div>
+    <div class="container cta-inner">
+      <h2>Upload your Hotel.</h2>
+      <p>Are you an hotel owner and wish to list your hotel vacancy in our platform?</p>
+      <a class="cta-btn" href="upload-role.html">Click here</a>
+    </div>
+  </section>
+
+  <!-- ============== Footer ============== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/rentimage.jpg" alt="RentMe logo" />
+      </div>
+
+      <div class="footer-links">
+        <h4>Helpful Links</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="#">Houses</a></li>
+          <li><a href="hotel-booking.html">Hotel Booking</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>info@rentmenaija.com</p>
+        <p>support@rentmenaija.com</p>
+      </div>
+
+      <div class="footer-apps">
+        <h4>Download our App</h4>
+        <div class="app-badges">
+          <img src="assets/images/google.png" alt="Get it on Google Play">
+          <img src="assets/images/appstore.webp" alt="Download on the App Store">
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; Rentme Naija 2025. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bookmark Dropdown -->
+  <div class="bookmark-dropdown-overlay"></div>
+  <div class="bookmark-dropdown">
+    <div class="bookmark-dropdown-header">
+      <h3>Saved Properties</h3>
+      <button class="close-dropdown" aria-label="Close bookmarks">
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="bookmark-dropdown-content">
+      <div class="empty-bookmarks">
+        <i>
+          <svg viewBox="0 0 24 24" width="48" height="48">
+            <path d="M6 2h12v20l-6-4-6 4z" fill="#116e35" opacity="0.3"/>
+          </svg>
+        </i>
+        <p>No bookmarks yet</p>
+        <span>Start saving properties to see them here</span>
+      </div>
+      <div class="bookmark-list">
+        <!-- Bookmarked items will be dynamically inserted here -->
+      </div>
+    </div>
+    <div class="bookmark-dropdown-footer">
+      <button class="view-all-bookmarks">View All Bookmarks</button>
+    </div>
+  </div>
+
+  <!-- Bookmark Notification -->
+  <div class="bookmark-notification">
+    <i>✓</i>
+    <span>Property added to bookmarks</span>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/hotel-booking.js"></script>
+</body>
+</html>

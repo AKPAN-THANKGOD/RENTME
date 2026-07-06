@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Booking - Rent Me Naija</title>
+    <link rel="icon" type="image/png" href="assets/images/rentme favicon.png" />
+    <link rel="stylesheet" href="assets/Fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="css/book.css" />
+  </head>
+  <body>
+    <!-- nav -->
+    <section class="nav">
+      <i class="fas fa-arrow-left"></i>
+    </section>
+    <!-- nav -->
+
+    <!-- book -->
+    <section class="book">
+      <div class="book1">Book Your Stay</div>
+      <section class="book2">
+        <div class="book21">
+          <span class="book211">Booking details</span>
+          <span class="book212">Number of Rooms</span>
+          <span class="book213">1 room</span>
+          <div class="dropdown">
+            <div class="dropdown-content">
+              <div class="option">New York</div>
+              <div class="option">London</div>
+              <div class="option">Tokyo</div>
+              <div class="option">Paris</div>
+            </div>
+          </div>
+          <span class="book214">only 2 left!</span>
+          <span class="book215">Duration</span>
+          <div class="book216">
+            <span class="book217">1 </span>
+
+            <span class="book218">
+              <p>Night</p>
+              <i class="fas fa-chevron-down"></i>
+            </span>
+
+            <div class="dropdown1-menu">
+              <a href="#" class="link">1</a>
+              <a href="#" class="link">2</a>
+              <a href="#" class="link">3</a>
+              <a href="#" class="link">4</a>
+            </div>
+
+             <div class="dropdown2-menu">
+              <a href="#" class="link1">night</a>
+              <a href="#" class="link1">day</a>
+             
+            </div>
+          </div>
+          <div class="book219">
+            <span class="price_per_night">Price per Night:</span>
+            <span class="price-tag">N15,000</span>
+          </div>
+
+          <div class="date">
+            <span class="date1">Select Dates</span>
+            <div class="dateBtn">
+              <button id="startBtn">Select Start Date</button>
+              <button id="endBtn">Select End Date</button>
+            </div>
+
+            <div class="calendar">
+              <div class="header">
+                <button id="prev">&#10094;</button>
+                <h2 id="month-year"></h2>
+                <button id="next">&#10095;</button>
+              </div>
+
+              <div class="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+              </div>
+
+              <div class="days" id="days"></div>
+            </div>
+            <div class="price">
+              <span id="selected-range"></span>
+              <span class="total">Total Price:N30,000</span>
+            </div>
+          </div>
+        </div>
+        <div class="book22">
+          <div class="book221">
+            <span class="book2211">Booking Details</span>
+            <span class="book2212">
+              <p class="book2213">Room Type: <span id="room-display"></span></p>
+              <p class="book2001">Date:</p>
+              <p class="book2000">Total Nights: 1</p>
+            </span>
+            <span class="book2214">Total Amount:N15,000</span>
+          </div>
+          <div class="book222">
+            <span class="book2221">Guest Information</span>
+            <span class="book2222">
+              <label for="name">Full name</label>
+              <input type="text" placeholder="Enter your full name" />
+            </span>
+            <span class="book2222">
+              <label for="name">Phone Number</label>
+              <input
+                type="text"
+                placeholder="Enter your working phone number"
+              />
+            </span>
+            <span class="book2222">
+              <label for="name">Email Address</label>
+              <input type="text" placeholder="Enter your email address" />
+            </span>
+            <div class="book2223">
+              <input type="checkbox" />
+              I agree and i accept this declaration
+            </div>
+            <div class="book2224">Proceed to Payment</div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <!-- book -->
+    <script src="js/book.js"></script>
+  </body>
+</html>

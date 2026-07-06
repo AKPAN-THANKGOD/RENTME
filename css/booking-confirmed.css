@@ -1,0 +1,161 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-family: "poppins";
+  display: flex;
+  flex-direction: column;
+}
+
+.aa1 {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  place-self: center;
+  padding-block: 10%;
+}
+
+.top {
+  padding: 30px 7%;
+  border-bottom: 4px solid #c9c9c9;
+  width: 100%;
+}
+
+.alpha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alpha i {
+  color: #046753;
+  display: flex;
+  place-self: center;
+  font-size: 400%;
+}
+
+.alpha1 {
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.alpha2 {
+  color: #6e6c6c;
+  margin-top: 20px;
+}
+
+.alpha3 {
+  border: 2px solid #ededed;
+  height: fit-content;
+  padding: 20px;
+  width: 60%;
+  border-radius: 20px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.alpha31 {
+  display: flex;
+  font-size: 100%;
+}
+
+.alpha31 p:first-child {
+  font-weight: bold;
+}
+
+.alpha31 p:last-child {
+  color: #676565;
+  font-weight: bold;
+}
+
+.top .fas {
+  font-size: 300%;
+}
+
+.bottom-options {
+  display: flex;
+  font-size: 65%;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.bottom-options p:first-child {
+  background-color: #038a5f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 10px;
+  height: 30px;
+  color: white;
+  font-weight: bold;
+  width: 150px;
+}
+
+.bottom-options p:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  height: 30px;
+  border: 2px solid #bed6d1;
+  color: #737171;
+  font-weight: bold;
+  width: 150px;
+  cursor: pointer;
+}
+
+@media (max-width: 1300px) {
+  section {
+    width: 90%;
+  }
+
+  .alpha2 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .alpha3 {
+    width: 100%;
+  }
+
+  .alpha {
+    display: grid;
+    place-self: center;
+  }
+
+  .alpha1 {
+    place-self: center;
+  }
+
+  section {
+    padding-top: 20%;
+  }
+}
+
+@media (max-width: 425px) {
+  .alpha3 {
+   place-self: center;
+  }
+
+  section {
+    padding-top: 30%;
+  }
+}
+
+@media (max-width: 320px){
+   .alpha3 {
+   place-self: center;
+   width: 90%;
+  }
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Booking - Rent Me Naija</title>
+    <link rel="icon" type="image/png" href="assets/images/rentme favicon.png" />
+    <link rel="stylesheet" href="assets/Fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="css/hotel-details.css" />
+  </head>
+  <body>
+    <!-- hero section -->
+    <section class="hotel-pic">
+      <div class="slide"></div>
+      <div class="symbol1">
+        <span><i class="fas fa-arrow-left"></i></span>
+        <span id="counter">1 / 4</span>
+      </div>
+      <div class="symbol2"><i class="fas fa-chevron-right"></i></div>
+      <div class="symbol3">
+        <span>available</span>
+        <i class="fas fa-check-circle"></i>
+      </div>
+    </section>
+    <!-- hero section -->
+
+    <!-- description -->
+    <section class="description">
+      <div class="description1">
+        <span>Grand Plaza Hotel</span>
+        <span id="rating">
+          <p id="star"></p>
+          <p id="rating-value">4.7</p>
+        </span>
+      </div>
+      <div class="address">
+        <span>33,Landbride Lekki Phase 1,Lagos,10001</span>
+        <span>Property Type: <b style="color: green">Hotel</b></span>
+      </div>
+
+      <div class="map">
+        <div class="map1">
+          <i class="fas fa-map-marker" style="color: #b70d0d"></i>
+          <span>view on the map</span>
+        </div>
+        <i class="fas fa-headset"></i>
+      </div>
+    </section>
+    <!-- description -->
+
+    <!-- features -->
+    <section id="features">
+      <div id="features1">
+        <span>Free WiFi</span>
+        <span>Pool</span>
+        <span>24/7 Security</span>
+      </div>
+    </section>
+    <!-- features -->
+
+    <!-- choose your room -->
+    <section class="room">
+      <p id="choose">Choose Your Room</p>
+      <div class="rooms">
+        <div id="rooms1" class="room-card">
+          <div
+            class="room-pic"
+            data-images="../assets/images/a4487aaa-d3fd-47d9-ae1b-e300668ef311.avif,../resource/Frame 334.png,../resource/Frame 327.png,../resource/Frame 311.png"
+          ></div>
+          <div class="room-info">
+            <p>Standard Room</p>
+            <span class="room-quality">
+              <span>
+                <p>Max-Guest:</p>
+                <p>5</p>
+              </span>
+              <span>
+                <p>Bed Cofig:</p>
+                <p>2 Single Bed</p>
+              </span>
+            </span>
+            <span class="amenities">
+              <p>Room Amenities:</p>
+              <p>TV,Balcony,Air Conditioning</p>
+            </span>
+
+            <span class="room-price">N15,000 per night</span>
+            <span class="room-available">only 9 left</span>
+            <div onclick="nextPage(this)" class="select">Select Room</div>
+          </div>
+        </div>
+        <div id="rooms2" class="room-card">
+          <div class="room-pic"></div>
+          <div class="room-info">
+            <p>Deluxe King Room</p>
+            <span class="room-quality">
+              <span>
+                <p>Max-Guest:</p>
+                <p>2</p>
+              </span>
+              <span>
+                <p>Bed Cofig:</p>
+                <p>1 King Bed</p>
+              </span>
+            </span>
+            <span class="amenities">
+              <p>Room Amenities:</p>
+              <p>TV,Balcony,Air Conditioning</p>
+            </span>
+
+            <span class="room-price">N12,000 per night</span>
+            <span class="room-available">only 2 left</span>
+            <div onclick="nextPage(this)" class="select">Select Room</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- choose your room -->
+
+    <script src="js/hotel-details.js"></script>
+  </body>
+</html>

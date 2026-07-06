@@ -1,0 +1,143 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: "poppins";
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  padding: 30px 7%;
+  font-size: 30px;
+  border-bottom: 4px solid #d6d6d6;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+.progress {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  place-self: center;
+}
+
+.progress span:nth-child(1),
+.progress span:nth-child(3),
+.progress span:nth-child(5),
+.progress span:nth-child(7),
+.progress span:nth-child(9),
+.progress span:nth-child(11) {
+  border-radius: 50%;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress span:nth-child(3),
+.progress span:nth-child(5),
+.progress span:nth-child(7),
+.progress span:nth-child(9),
+.progress span:nth-child(11) {
+  background-color: #d9d9d9;
+}
+
+.progress .completed-line {
+  background-color: #4caf50; /* Green for completed lines */
+}
+
+.progress span:nth-child(2),
+.progress span:nth-child(4),
+.progress span:nth-child(6),
+.progress span:nth-child(8),
+.progress span:nth-child(10) {
+  width: 35px;
+  height: 10px;
+  background-color: #d9d9d9;
+  border: 2px solid transparent;
+}
+
+.progress span.active {
+  background-color: #046753;
+}
+
+.echo {
+  display: flex;
+  flex-direction: column;
+  place-self: center;
+  margin-top: 60px;
+  border: 2px solid #d8d4d4;
+  padding: 20px;
+  margin-inline: 7%;
+}
+
+.echo1 {
+  border-radius: 50%;
+  width: 60px;
+  aspect-ratio: 1;
+  display: flex;
+  gap: 5px;
+  place-items: center;
+  justify-content: center;
+  border: 5px solid #046753;
+  place-self: center;
+}
+
+.echo1 span{
+  background-color: #046753;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.echo2{
+  font-weight: bold;
+  font-size: 160%;
+  place-self: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.echo3{
+  font-weight: bold;
+  font-size: 100%;
+  place-self: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 10px;
+  color: #737272;
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .progress span:nth-child(2),
+  .progress span:nth-child(3),
+  .progress span:nth-child(4),
+  .progress span:nth-child(5),
+  .progress span:nth-child(6),
+  .progress span:nth-child(7),
+  .progress span:nth-child(8),
+  .progress span:nth-child(9),
+  .progress span:nth-child(10),
+  .progress span:nth-child(11) {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+}

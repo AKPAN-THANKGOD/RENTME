@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Booking - Rent Me Naija</title>
+    <link rel="icon" type="image/png" href="assets/images/rentme favicon.png" />
+    <link rel="stylesheet" href="assets/Fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="css/describe.css" />
+  </head>
+  <body>
+    <!-- nav bar -->
+    <div class="top">
+      <i class="fas fa-arrow-left"></i>
+      <div class="progress">
+        <span class="dot active">1</span>
+        <span class="line"></span>
+        <span class="dot">2</span>
+        <span class="line"></span>
+        <span class="dot">3</span>
+        <span class="line"></span>
+        <span class="dot">4</span>
+        <span class="line"></span>
+        <span class="dot">5</span>
+        <span class="line"></span>
+        <span class="dot">6</span>
+      </div>
+      <div></div>
+    </div>
+    <!-- nav bar -->
+
+    <!-- body -->
+
+    <section class="hero" id="hhh1">
+      <div id="gencon1" class="gencon">
+        <div class="hero3 image-upload-area" onclick="selectImages()">
+          <div class="upload-text" id="uploadText">
+            <i class="fas fa-camera"></i>
+            <span class="add">Add Clear Photos</span>
+            <span class="show">
+              <p>Show the hotel's best features: exterior,</p>
+              <p>lobby, pool, dining area and location</p>
+            </span>
+          </div>
+
+          <!-- 🔥 Images will load here (separate container) -->
+          <div id="previewImages" class="preview"></div>
+        </div>
+      </div>
+
+      <input
+        type="file"
+        id="imageInput"
+        accept="image/*"
+        style="display: none"
+      />
+
+      <div class="hero2">
+        <div class="gencon" id="gencon2">
+          <p>Describe your property</p>
+          <span>
+            <label for="">Hotel Name</label>
+            <input type="text" placeholder="e.g. runnies hotel" />
+          </span>
+
+          <span>
+            <label for="">Property Type</label>
+            <input type="text" placeholder="e.g. runnies hotel" />
+          </span>
+
+          <span>
+            <label for="">Short Tagline</label>
+            <input
+              class="tagline"
+              type="text"
+              placeholder="e.g. Secure Guest House with Generator and Free Breakfast"
+            />
+          </span>
+
+          <span>
+            <label for="">Description</label>
+            <input
+              class="tagline"
+              type="text"
+              placeholder="Show the hotel's best features:exterior,lobby,pool,dining area and location"
+            />
+          </span>
+
+          <span>
+            <label for="">Phone Number</label>
+            <input type="text" placeholder="Input Your Phone Number" />
+          </span>
+          <div class="next">Next</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- number2 -->
+    <section class="hero" id="number2" style="display: none">
+      <div id="gencon3"></div>
+      <div class="hero2" id="hero2">
+        <p class="set">Set your Hotel Location</p>
+        <span class="fill">
+          <label for="">Full Address</label>
+          <input type="text" placeholder="Fill in your Full Address" />
+        </span>
+        <span class="visuals">
+          <p></p>
+          <p></p>
+        </span>
+        <span class="nearby">Nearby Visuals to help confirm</span>
+        <span class="button">Yes, This is Correct</span>
+        <span class="drag">Drag to the tip to adjust to the exact spot</span>
+      </div>
+    </section>
+    <!-- number2 -->
+
+    <!------------------------------- number3 ---------------------------->
+    <section class="hero" id="number3">
+      <div id="gencon3">
+        <p>Highlight Key features</p>
+        <p>Attract More Guests</p>
+      </div>
+      <div class="hero4">
+        <p class="shl">Set Your Hotel Location</p>
+        <div class="general">
+          <p class="genTitle">General</p>
+          <div class="Checkoptions1">
+            <span>
+              <input type="checkbox" />
+              <p>Free-wifi</p>
+            </span>
+            <span>
+              <input type="checkbox" />
+              <p>Secure Parking</p>
+            </span>
+            <span>
+              <input type="checkbox" />
+              <p>Power Backup (Generator/Inverter)</p>
+            </span>
+            <span>
+              <input type="checkbox" />
+              <p>24 Hour Security</p>
+            </span>
+          </div>
+        </div>
+        <div class="general" id="general1">
+          <p class="genTitle">Wellness</p>
+          <div class="Checkoptions1">
+            <span>
+              <input type="checkbox" />
+              <p>Swimming Pool</p>
+            </span>
+            <span>
+              <input type="checkbox" />
+              <p>Gym</p>
+            </span>
+            <span>
+              <input type="checkbox" />
+              <p>Spa</p>
+            </span>
+            <span>
+              <input type="checkbox" />
+              <p>Elevator</p>
+            </span>
+          </div>
+        </div>
+        <div class="Additional">
+          <p>Additional Amenities</p>
+          <input
+            type="text"
+            placeholder="E.g., RoofTop Bar,Prayer Room,Kids Play Area,Free Water Refill"
+          />
+        </div>
+        <div class="button1">Yes.this is correct</div>
+      </div>
+    </section>
+    <!-- ---------------------------number3----------------- -->
+
+    <!-- -------------------------number4---------------------- -->
+    <section class="hero" id="number4">
+      <div id="gencon4">
+        <!-- <div class="gq1">
+          <i class="fas fa-camera"></i>
+          <span class="uploadd">Upload Photos Of</span>
+          <span class="uploadd">This Room</span>
+          <span class="uploadd1">Show the bed,bathroom and view so the </span>
+          <span class="uploadd1">guests know what to expect</span>
+        </div> -->
+        <div class="gq1 room-upload" onclick="selectRoomImages(this)">
+          <div class="room-upload-text" id="roomUploadText1">
+            <i class="fas fa-camera"></i>
+            <span class="uploadd">Upload Photos Of</span>
+            <span class="uploadd">This Room</span>
+            <span class="uploadd1">Show the bed, bathroom and view</span>
+          </div>
+
+          <!-- Image previews -->
+
+          <div id="roomPreview1" class="roomPreview"></div>
+          <input
+            type="file"
+            id="roomImageInput1"
+            class="roomImageInput"
+            accept="image/*"
+            data-preview="roomPreview1"
+            multiple
+            hidden
+          />
+        </div>
+      </div>
+      <div class="hero4">
+        <div class="alpha">
+          <span>Add your room type</span>
+          <span>
+            <i class="fas fa-plus"></i>
+            <p>Add Room</p>
+          </span>
+        </div>
+        <!-- <div class="alpha1">
+          <label for="">Room Type 1</label>
+          <span>
+            <p>Hotel</p>
+            <i class="fas fa-play" style="transform: rotate(90deg)"></i>
+          </span>
+        </div> -->
+        <div class="alpha1 dropdown">
+          <label>Room Type</label>
+
+          <div class="dropdown-header">
+            <p class="selected-room">Select Room Type</p>
+            <i class="fas fa-play" style="transform: rotate(90deg)"></i>
+          </div>
+
+          <ul class="dropdown-menu">
+            <li>Standard Room</li>
+            <li>Deluxe Room</li>
+            <li>Executive Room</li>
+            <li>Suite</li>
+            <li>Family Room</li>
+          </ul>
+        </div>
+
+        <div class="alpha1">
+          <label for="">Max-Guests</label>
+          <!-- <span>
+            <p>Hotel</p>
+            <i class="fas fa-triangle"></i>
+          </span> -->
+          <input type="number" id="alpha2" />
+        </div>
+        <span class="alpha3">Total People allowed(adults+children)</span>
+        <div class="alpha1">
+          <label for="">Bed Configurations</label>
+          <!-- <span>
+            <p>Hotel</p>
+            <i class="fas fa-triangle"></i>
+          </span> -->
+          <input
+            type="text"
+            id="alpha4"
+            placeholder="e.g. secure guesthouse with generator & free breakfast"
+          />
+        </div>
+        <div class="alpha5">
+          <span>Room Amenities</span>
+          <div class="alpha6">
+            <span>
+              <input type="checkbox" />
+              <p>TV</p>
+            </span>
+            <span>
+              <input type="checkbox" />
+              <p>Air Conditioning</p>
+            </span>
+            <span>
+              <input type="checkbox" />
+              <p>Air conditioning</p>
+            </span>
+          </div>
+        </div>
+        <div class="alpha7">
+          <label for="">Additional Amenities</label>
+          <input
+            type="text"
+            placeholder="Show the hotel's best features:exterior,lobby,pool,dining area and location"
+          />
+        </div>
+        <div class="alpha8">
+          <span>How do you charge?</span>
+          <div class="alpha9">
+            <span>
+              <input type="radio" name="" />
+              <p>Per Night</p>
+              <p>(Standard Overnight Stay)</p>
+            </span>
+            <span>
+              <input type="radio" name="" />
+              <p>Per Hour</p>
+              <p>(Short stays, e.g. 3-12hrs)</p>
+            </span>
+            <span>
+              <input type="radio" name="" />
+              <p>Per Day</p>
+              <p>(Full 24hours Stay)</p>
+            </span>
+          </div>
+        </div>
+        <div class="alpha10">
+          <span>Nightly Rate(N)</span>
+          <input type="text" name="" placeholder="e.g. N15,000" />
+        </div>
+        <div class="alpha11">
+          <span>Cancellation Policy</span>
+          <div class="alpha12">
+            <span>
+              <input type="checkbox" />
+              <p>Free Cancellation Up To 24hrs</p>
+            </span>
+            <span>
+              <input type="checkbox" />
+              <p>Non-Refundable</p>
+            </span>
+            <span>
+              <input type="checkbox" />
+              <p>Custom</p>
+            </span>
+          </div>
+        </div>
+        <div class="alpha13">
+          <span>Guest Guidelines</span>
+          <div class="alpha14">
+            <span>
+              <input type="checkbox" />
+              <p>No Smoking</p>
+            </span>
+            <span>
+              <input type="checkbox" />
+              <p>Credit card required at checkin</p>
+            </span>
+          </div>
+        </div>
+        <div class="alpha15">
+          <span>Add your own Guideline(optional)</span>
+          <input
+            type="text"
+            name=""
+            placeholder="E.g. Quiet hours after 10pm"
+          />
+          <p>
+            These guidelines help guests know what to expect and will show on
+            your listing
+          </p>
+        </div>
+        <div class="alpha16">SAVE</div>
+      </div>
+    </section>
+    <!-- ---------------------number4-------------------------- -->
+
+    <!-- ---------------------------number 4 2 ------------------->
+    <section class="bravo">
+      <div class="bravo1">
+        <span>Add Your Room Type</span>
+        <span>
+          <i class="fas fa-plus"></i>
+          <p>Add Room</p>
+        </span>
+      </div>
+      <div class="bravo2">
+        <span></span>
+        <span>
+          <p>Standard Room</p>
+          <p>Max Guests:5</p>
+          <p>N15,000 / Night</p>
+        </span>
+        <span>
+          <i class="fas fa-pencil"></i>
+          <i class="fas fa-trash"></i>
+        </span>
+      </div>
+      <div class="bravo3">Yes,this is correct</div>
+    </section>
+    <!-- ---------------------------number 4 2 ------------------->
+
+    <!-- -------------------------number4 3---------------------- -->
+    <section class="hero" id="number4_3">
+      <div id="gencon4">
+        <!-- <div class="gq1">
+          <i class="fas fa-camera"></i>
+          <span class="uploadd">Upload Photos Of</span>
+          <span class="uploadd">This Room</span>
+          <span class="uploadd1">Show the bed,bathroom and view so the </span>
+          <span class="uploadd1">guests know what to expect</span>
+        </div> -->
+        <div class="gq1 room-upload" onclick="selectRoomImages(this)">
+          <div class="room-upload-text" id="roomUploadText2">
+            <i class="fas fa-camera"></i>
+            <span class="uploadd">Upload Photos Of</span>
+            <span class="uploadd">This Room</span>
+            <span class="uploadd1">Show the bed, bathroom and view</span>
+          </div>
+
+          <!-- Image previews -->
+
+          <!-- <input
+            type="file"
+            class="roomImageInput"
+            data-preview="roomPreview2"
+            hidden
+          />
+        -->
+          <div id="roomPreview2" class="roomPreview"></div>
+          <input
+            type="file"
+            id="roomImageInput2"
+            class="roomImageInput"
+            accept="image/*"
+            data-preview="roomPreview2"
+            multiple
+            hidden
+          />
+        </div>
+      </div>
+      <div class="hero4">
+        <div class="alpha">
+          <span>Add your room type</span>
+          <span>
+            <i class="fas fa-plus"></i>
+            <p>Add Room</p>
+          </span>
+        </div>
+        <!-- <div class="alpha1">
+          <label for="">Room Type 1</label>
+          <span>
+            <p>Hotel</p>
+            <i class="fas fa-play" style="transform: rotate(90deg)"></i>
+          </span>
+        </div> -->
+        <div class="alpha1 dropdown">
+          <label>Room Type 2</label>
+
+          <div class="dropdown-header">
+            <p class="selected-room">Select Room Type</p>
+            <i class="fas fa-play" style="transform: rotate(90deg)"></i>
+          </div>
+
+          <ul class="dropdown-menu">
+            <li>Standard Room</li>
+            <li>Deluxe Room</li>
+            <li>Executive Room</li>
+            <li>Suite</li>
+            <li>Family Room</li>
+          </ul>
+        </div>
+
+        <div class="alpha1">
+          <label for="">Max-Guests</label>
+          <!-- <span>
+            <p>Hotel</p>
+            <i class="fas fa-triangle"></i>
+          </span> -->
+          <input type="number" id="alpha2" />
+        </div>
+        <span class="alpha3">Total People allowed(adults+children)</span>
+        <div class="alpha1">
+          <label for="">Bed Configurations</label>
+          <!-- <span>
+            <p>Hotel</p>
+            <i class="fas fa-triangle"></i>
+          </span> -->
+          <input
+            type="text"
+            id="alpha4"
+            placeholder="e.g. secure guesthouse with generator & free breakfast"
+          />
+        </div>
+
+        <div class="alpha5">
+          <span>Room Amenities</span>
+          <div class="alpha6">
+            <span>
+              <input type="checkbox" />
+              <p>TV</p>
+            </span>
+            <span>
+              <input type="checkbox" />
+              <p>Air Conditioning</p>
+            </span>
+            <span>
+              <input type="checkbox" />
+              <p>Air conditioning</p>
+            </span>
+          </div>
+        </div>
+        <div class="alpha7">
+          <label for="">Additional Amenities</label>
+          <input
+            type="text" data-optional="true"
+            placeholder="Show the hotel's best features:exterior,lobby,pool,dining area and location"
+          />
+        </div>
+        <div class="alpha8">
+          <span>How do you charge?</span>
+          <div class="alpha9">
+            <span>
+              <input type="radio" name="" />
+              <p>Per Night</p>
+              <p>(Standard Overnight Stay)</p>
+            </span>
+            <span>
+              <input type="radio" name="" />
+              <p>Per Hour</p>
+              <p>(Short stays, e.g. 3-12hrs)</p>
+            </span>
+            <span>
+              <input type="radio" name="" />
+              <p>Per Day</p>
+              <p>(Full 24hours Stay)</p>
+            </span>
+          </div>
+        </div>
+        <div class="alpha10">
+          <span>Nightly Rate(N)</span>
+          <input type="text" name="" placeholder="e.g. N15,000" />
+        </div>
+        <div class="alpha11">
+          <span>Cancellation Policy</span>
+          <div class="alpha12">
+            <span>
+              <input type="checkbox" />
+              <p>Free Cancellation Up To 24hrs</p>
+            </span>
+            <span>
+              <input type="checkbox" />
+              <p>Non-Refundable</p>
+            </span>
+            <span>
+              <input type="checkbox" />
+              <p>Custom</p>
+            </span>
+          </div>
+        </div>
+        <div class="alpha13">
+          <span>Guest Guidelines</span>
+          <div class="alpha14">
+            <span>
+              <input type="checkbox" />
+              <p>No Smoking</p>
+            </span>
+            <span>
+              <input type="checkbox" />
+              <p>Credit card required at checkin</p>
+            </span>
+          </div>
+        </div>
+        <div class="alpha15">
+          <span>Add your own Guideline(optional)</span>
+          <input
+            type="text"
+            name="" data-optional="true"
+            placeholder="E.g. Quiet hours after 10pm"
+          />
+          <p>
+            These guidelines help guests know what to expect and will show on
+            your listing
+          </p>
+        </div>
+        <div class="alpha16">SAVE</div>
+      </div>
+    </section>
+    <!-- ---------------------number4 3-------------------------- -->
+
+    <!-- ---------------------number4 4-------------------------- -->
+    <section class="bravo" style="display: none">
+      <div class="bravo1">
+        <span>Add Your Room Type</span>
+        <span>
+          <i class="fas fa-plus"></i>
+          <p>Add Room</p>
+        </span>
+      </div>
+      <div class="bravo4">
+        <div class="bravo2">
+          <span></span>
+          <span>
+            <p>Standard Room</p>
+            <p>Max Guests:5</p>
+            <p>N15,000 / Night</p>
+          </span>
+          <span>
+            <i class="fas fa-pencil"></i>
+            <i class="fas fa-trash"></i>
+          </span>
+        </div>
+        <div class="bravo2">
+          <span></span>
+          <span>
+            <p>Standard Room</p>
+            <p>Max Guests:5</p>
+            <p>N15,000 / Night</p>
+          </span>
+          <span>
+            <i class="fas fa-pencil"></i>
+            <i class="fas fa-trash"></i>
+          </span>
+        </div>
+      </div>
+      <div class="bravo3" id="bbravo3">Yes,this is correct</div>
+    </section>
+    <!-- ---------------------number4 4-------------------------- -->
+
+    <!-- ---------------------preview your listing---------------- -->
+    <section class="charlie" id="number5">
+      <p class="charlie1">Preview Your Listing</p>
+      <p class="charlie2">This is how listing will appear to guest</p>
+
+      <div class="charlie3">
+        <div class="charlie4">
+          <div class="charlie6"></div>
+          <div class="charlie7">
+            <p class="charlie8">Grand Plaza Hotel</p>
+            <p class="charlie9">19, Victor Kokoma Street., Victoria Island</p>
+            <p class="charlie10">N12,000 / Night</p>
+            <p class="charlie11">
+              Secure Guest House and with Generator and free breakfast
+            </p>
+          </div>
+        </div>
+        <div class="charlie5">
+          <div class="charlie12">
+            <span></span>
+            <span class="charlie14">
+              <p>Moses Bliss</p>
+              <span>
+                <i class="fas fa-star"></i>
+                <p class="charlie13">4.7</p>
+              </span>
+            </span>
+          </div>
+          <div class="charlie15">
+            <span>
+              <i fas fa-clock></i>
+              <p>1 week ago</p>
+            </span>
+            <i class="fas fa-bookmark"></i>
+          </div>
+        </div>
+      </div>
+      <div class="charlie16">Continue</div>
+    </section>
+    <!-- -------------------------Preview your listing------------------------ -->
+
+    <!-- --------------------------------confirmation------------------- -->
+    <section class="delta" id="number6">
+      <p class="delta1">You're Almost Done!</p>
+      <p class="delta2">By Publishing this listing,i confirm:</p>
+      <div class="delta4">
+        <div class="delta3">
+          <input type="checkbox" />
+          <span>I am the owner or authorized representative</span>
+        </div>
+        <div class="delta3">
+          <input type="checkbox" />
+          <span
+            >All photos and details are accurate and honestly presented</span
+          >
+        </div>
+        <div class="delta3">
+          <input type="checkbox" />
+          <span
+            >I will be held responsible if any information i provide is
+            false,misleading or used to defraud tenants or the platform</span
+          >
+        </div>
+        <div class="delta3">
+          <input type="checkbox" />
+          <span
+            >I allow RentmeNaija to hold payments in escrow until the guest
+            property is as described</span
+          >
+        </div>
+        <div class="delta3" id="delta31">
+          <input type="checkbox" />
+          <span>I agree and accept this declaration</span>
+        </div>
+        <div class="delta5">
+          <span>Signature</span>
+          <input type="text" placeholder="Type your full name" />
+        </div>
+        <div class="delta6">Publish Listing</div>
+      </div>
+    </section>
+    <!-- --------------------------------confirmation------------------- -->
+
+    <!-- number 7 -->
+    <section class="echo" id="number7">
+      <div class="echo1">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="echo2">
+        <span>Your listing has been submitted and is </span>
+        <span>now under review by our team</span>
+      </div>
+      <div class="echo3">
+        <span>This may take up to 12hrs</span>
+        <span>You may close the page</span>
+      </div>
+    </section>
+    <!-- number 7 -->
+    <!-- body -->
+    <script src="js/describe.js"></script>
+  </body>
+</html>

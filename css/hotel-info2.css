@@ -1,0 +1,217 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.top {
+  padding: 20px 7%;
+}
+
+.top .fas:hover {
+  color: grey;
+  transform: scale(1.1);
+}
+
+.hotel-pic {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 70%;
+  padding: 7%;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  overflow: hidden; /* hide slides that move out */
+  position: relative;
+}
+
+.hotel-pic .slide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease; /* smooth slide */
+}
+
+.symbol1 {
+  display: flex;
+  align-self: flex-end;
+  color: white;
+}
+
+.symbol1,
+.symbol2,
+.symbol3 {
+  z-index: 10; /* higher than slides */
+}
+
+.symbol1 .fas {
+  color: white;
+  font-size: 25px;
+}
+
+.symbol2 {
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+  place-items: center;
+}
+
+.symbol2 span {
+  display: grid;
+  place-self: center;
+  background-color: white;
+  padding: 10px;
+}
+
+.symbol3 {
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 120px;
+  place-self: flex-end;
+  gap: 10px;
+  padding-block: 7px;
+}
+
+.symbol3 i {
+  font-size: 25px;
+  color: #046753;
+  animation: dance 3s infinite;
+  transition: animation 2s;
+}
+
+@keyframes dance {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+#room {
+  padding-inline: 7%;
+  margin-top: 20px;
+}
+
+#room-info > p {
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+#room-quality > span {
+  display: flex;
+  font-size: 120%;
+}
+
+#room-quality > span p:first-child {
+  font-weight: bold;
+}
+
+#room-quality > span p:last-child {
+  color: #706f6f;
+  font-weight: bold;
+}
+
+#amenities {
+  font-weight: bold;
+  font-size: 120%;
+  margin-bottom: 40px;
+}
+
+#amenities p:last-child {
+  color: #706f6f;
+}
+
+#room-price {
+  color: #038a5f;
+  font-weight: bold;
+  font-size: 150%;
+}
+
+#room-available {
+  color: red;
+  margin-top: 5px;
+  font-size: 120%;
+  margin-block: 60px;
+}
+
+.guidelines span:nth-child(1) {
+  font-weight: bold;
+  font-size: 130%;
+}
+
+#cancellation {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  padding-bottom: 50px;
+}
+
+#cancellation span:first-child {
+  font-weight: bold;
+  font-size: 130%;
+}
+
+.c11 {
+  padding-bottom: 20px;
+}
+
+.continue {
+  width: 50%;
+  background-color: #038a5f;
+  height: 40px;
+  border-radius: 20px;
+  color: white;
+  display: flex;
+  place-self: center;
+  place-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.continue:hover {
+  background-color: darkslategray;
+  transform: scale(1.1);
+}
+
+@media (min-width: 320px) {
+  .hotel-pic {
+    gap: 38%;
+  }
+}
+
+@media (min-width: 768px) {
+  .hotel-pic {
+    gap: 40%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hotel-pic {
+    gap: 50%;
+  }
+}
+
+@media (min-width: 2560px) {
+  .hotel-pic {
+    gap: 90%;
+  }
+}

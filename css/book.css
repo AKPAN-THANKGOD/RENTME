@@ -1,0 +1,456 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-family: "poppins";
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  padding-inline: 7%;
+  padding-block: 20px;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 4px solid #e1e1e1;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: white;
+}
+
+.nav .fas:hover{
+  color: grey;
+  transform: scale(1.1);
+}
+
+.book {
+  padding-inline: 7%;
+}
+
+.book1 {
+  font-size: 200%;
+  font-weight: bold;
+  margin-block: 30px;
+}
+
+.book2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5%;
+  margin-bottom: 50px;
+}
+
+.book21 {
+  border: 2px solid #ededed;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.book211 {
+  font-weight: bold;
+  font-size: 130%;
+}
+
+.book212 {
+  font-weight: bold;
+  font-size: 100%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.book213 {
+  border: 2px solid #ededed;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.book214 {
+  color: red;
+  font-size: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.book215 {
+  font-weight: bold;
+  font-size: 100%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.book216 {
+  display: flex;
+  gap: 5%;
+}
+
+.book217 {
+  width: 30%;
+  height: 60px;
+  border: 2px solid #ededed;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book218 {
+  width: 70%;
+  height: 60px;
+  background-color: #046753;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 20px;
+}
+
+.book219 {
+  display: flex;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 100%;
+  color: #605e5e;
+}
+
+.date1 {
+  margin-top: 130px;
+  font-size: 110%;
+  font-weight: bold;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.book22 {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 20% 75%;
+  gap: 5%;
+}
+
+.book221,
+.book222 {
+  border: 2px solid #ededed;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.book2211 {
+  font-weight: bold;
+  font-size: 130%;
+}
+
+.book2212 {
+  color: #908f8f;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+.book2214 {
+  color: #5d5b5b;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+.book2221 {
+  font-weight: bold;
+  font-size: 130%;
+}
+
+.book2222 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.book2222 label {
+  font-size: 100%;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.book2222 input {
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 40px;
+  padding-inline: 20px;
+}
+
+.book2222 input::placeholder {
+  font-weight: bold;
+  font-size: 100%;
+}
+
+.book2223 {
+  margin-block: 20px;
+}
+
+.book2224 {
+  background-color: #038a5f;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  cursor:pointer;
+}
+
+.book2224:hover{
+background-color: rgb(85, 178, 85);
+}
+
+.calendar {
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-block: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header button {
+  border: none;
+  background: #eee;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.weekdays,
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 15px;
+  font-size: 70%;
+}
+
+.weekdays div {
+  font-weight: bold;
+  text-align: center;
+}
+
+.days div {
+  text-align: center;
+  padding: 10px 0;
+  background: #fafafa;
+  border-radius: 5px;
+}
+
+.days .start-date {
+  background: #4caf50; /* green */
+  color: white;
+  font-weight: bold;
+}
+
+.days .end-date {
+  background: #f44336; /* red */
+  color: white;
+  font-weight: bold;
+}
+
+.days .in-range {
+  background: #c8e6c9; /* light green */
+  color: black;
+  font-weight: bold;
+}
+
+#startBtn {
+  border-radius: 10px;
+  background-color: green;
+  color: white;
+  padding: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+#endBtn {
+  border-radius: 10px;
+  background-color: red;
+  color: white;
+  padding: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.days .today {
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+#month-year {
+  font-size: 70%;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.total {
+  font-size: 100%;
+  font-weight: bold;
+}
+
+
+/* 
+.book213 {
+  cursor: pointer;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: inline-block;
+} */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 100;
+}
+
+.option {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+ .book216 {
+    position: relative;
+  }
+  .book217, .book218 {
+    cursor: pointer;
+    position: relative;
+  }
+
+   .dropdown1-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-top: none;
+      min-width: 160px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      z-index: 10;
+    }
+
+    
+    .dropdown1-menu a {
+      display: block;
+      padding: 10px 16px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .dropdown1-menu a:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Show dropdown when active */
+    .dropdown1-menu.show {
+      display: block;
+    }
+
+ .dropdown2-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 70%;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-top: none;
+      min-width: 160px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+      z-index: 10;
+    }
+
+    
+    .dropdown2-menu a {
+      display: block;
+      padding: 10px 16px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .dropdown2-menu a:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Show dropdown when active */
+    .dropdown2-menu.show {
+      display: block;
+    }
+
+
+
+@media (max-width: 500px) {
+  .book2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .book21 {
+    margin-bottom: 20px;
+  }
+
+  .dateBtn {
+    display: flex;
+    gap: 10px;
+  }
+
+  #startBtn,
+  #endBtn {
+    width: 45%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 70%;
+  }
+}

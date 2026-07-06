@@ -1,0 +1,367 @@
+/* ========== HOTEL BOOKING PAGE STYLES ========== */
+
+/* Main Hotel Booking Section */
+.hotel-booking-main {
+  padding: 60px 0;
+  background: #fff;
+}
+
+/* Section Head */
+.section-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-head .subtle {
+  color: var(--muted);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.section-head h2 {
+  color: var(--accent-dark);
+  font-size: 28px;
+  margin: 0;
+}
+
+/* Hotels Grid Section */
+.hotels-grid-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 26px;
+  margin-top: 18px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hotel Card - Simplified structure */
+.hotel-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hotel-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* SIMPLIFIED: Use CSS Grid for perfect alignment */
+.hotel-card-top {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  grid-template-rows: auto auto auto 1fr;
+  gap: 8px 16px;
+  padding: 16px;
+  align-items: start;
+  min-height: 140px;
+}
+
+.hotel-image {
+  grid-column: 1;
+  grid-row: 1 / span 4;
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.hotel-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hotel-name {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--accent-dark);
+  line-height: 1.3;
+  /* Limit to 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hotel-address {
+  grid-column: 2;
+  grid-row: 2;
+  color: #3a3a3a;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.4;
+  /* Limit to 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hotel-price {
+  grid-column: 2;
+  grid-row: 3;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 16px;
+  margin: 0;
+}
+
+.hotel-description {
+  grid-column: 2;
+  grid-row: 4;
+  color: #3a3a3a;
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+  align-self: end;
+  /* Limit to 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Bottom Part: Owner info and metadata */
+.hotel-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+
+.hotel-meta-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.owner-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.owner-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ddd;
+  flex-shrink: 0;
+}
+
+.owner-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.owner-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #666;
+  font-size: 14px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.rating svg {
+  fill: #ffcc00;
+}
+
+.hotel-meta-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.post-date {
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+}
+
+.card-bookmark {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  flex-shrink: 0;
+}
+
+.card-bookmark:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.card-bookmark svg {
+  fill: #666;
+  transition: fill 0.2s;
+}
+
+.card-bookmark.saved {
+  background: var(--accent);
+}
+
+.card-bookmark.saved svg {
+  fill: white;
+}
+
+/* See More Button */
+.see-more-wrap {
+  text-align: center;
+  margin: 40px 0 20px 0;
+}
+
+.see-more {
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+  padding: 12px 32px;
+  border-radius: 24px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.see-more:hover {
+  background: var(--accent-dark);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 1100px) {
+  .hotels-grid-section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 860px) {
+  .hotel-booking-main {
+    padding: 40px 0;
+  }
+  
+  .section-head h2 {
+    font-size: 24px;
+  }
+  
+  .hotels-grid-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .hotel-card-top {
+    padding: 14px;
+    gap: 6px 14px;
+    min-height: 130px;
+    grid-template-columns: 100px 1fr;
+  }
+  
+  .hotel-image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .hotel-name {
+    font-size: 16px;
+  }
+  
+  .hotel-address,
+  .hotel-description {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hotel-booking-main {
+    padding: 30px 0;
+  }
+  
+  .section-head h2 {
+    font-size: 22px;
+  }
+  
+  .hotel-card-top {
+    grid-template-columns: 1fr;
+    grid-template-rows: 160px auto auto auto auto;
+    gap: 8px;
+    padding: 12px;
+    min-height: auto;
+  }
+  
+  .hotel-image {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    height: 160px;
+  }
+  
+  .hotel-name {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  
+  .hotel-address {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  
+  .hotel-price {
+    grid-column: 1;
+    grid-row: 4;
+  }
+  
+  .hotel-description {
+    grid-column: 1;
+    grid-row: 5;
+    align-self: start;
+  }
+  
+  .hotel-card-bottom {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  .hotel-meta-left {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .hotel-meta-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .see-more {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+}

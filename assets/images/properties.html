@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties for Rent - Rent Me Naija</title>
+    <link rel="icon" type="image/png" href="assets/images/rentme favicon.png">
+    
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- ============== Header / Navbar ============== -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <img src="assets/images/rentlogo.png" alt="RentMe Naija logo" class="logo">
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+                <a class="nav-item" href="index.html">Home</a>
+                <a class="nav-item active" href="properties.html">Properties</a>
+                <a class="nav-item" href="about.html">About us</a>
+                <a class="nav-item" href="contact.html">Contact us</a>
+            </nav>
+
+            <div class="header-actions">
+                <div class="user-section">
+                    <!-- Dynamic user avatar - will show either uploaded image or default icon -->
+                    <div class="user-avatar" id="user-avatar">
+                        <!-- Default fallback - will be replaced by API data -->
+                        <svg class="usericon fallback-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                            <path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM2 20a9.99 9.99 0 0 1 20 0z"/>
+                        </svg>
+                    </div>
+                    <div class="user-text">
+                        <div class="welcome">Welcome</div>
+                        <a class="signin" href="login.html" id="auth-link">Sign in / Register</a>
+                    </div>
+                </div>
+                <button class="bookmark-icon header-bookmark" aria-label="Saved items">
+                    <svg viewBox="0 0 24 24" width="18" height="18">
+                        <path d="M6 2h12v20l-6-4-6 4z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============== Properties Listing Page ============== -->
+    <main class="properties-listing-page">
+        <!-- Page Header with Search -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Find Your Perfect Home</h1>
+                <p>Browse through our extensive collection of properties across Nigeria</p>
+                
+                <!-- Advanced Search Bar -->
+                <div class="advanced-search">
+                    <div class="search-bar">
+                        <div class="search-input">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="search-input" placeholder="Search by location, property name...">
+                        </div>
+                        <button class="search-btn">Search</button>
+                    </div>
+                    
+                    <button class="filter-toggle" id="filter-toggle">
+                        <i class="fas fa-sliders-h"></i>
+                        Filters
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Panel -->
+        <section class="filter-panel" id="filter-panel">
+            <div class="container">
+                <div class="filter-header">
+                    <h2>Filter Properties</h2>
+                    <button class="close-filters" id="close-filters">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="filter-options">
+                    <!-- Location Filter -->
+                    <div class="filter-group">
+                        <label for="location-filter">Location</label>
+                        <select id="location-filter">
+                            <option value="">All Locations</option>
+                            <option value="lagos">Lagos</option>
+                            <option value="abuja">Abuja</option>
+                            <option value="port-harcourt">Port Harcourt</option>
+                            <option value="ibadan">Ibadan</option>
+                            <option value="kano">Kano</option>
+                            <option value="enugu">Enugu</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Property Type Filter -->
+                    <div class="filter-group">
+                        <label for="property-type-filter">Property Type</label>
+                        <select id="property-type-filter">
+                            <option value="">All Types</option>
+                            <option value="apartment">Apartment</option>
+                            <option value="house">House</option>
+                            <option value="studio">Studio</option>
+                            <option value="duplex">Duplex</option>
+                            <option value="commercial">Commercial</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Price Range Filter -->
+                    <div class="filter-group">
+                        <label for="price-range-filter">Price Range</label>
+                        <select id="price-range-filter">
+                            <option value="">Any Price</option>
+                            <option value="0-100000">₦0 - ₦100,000</option>
+                            <option value="100000-300000">₦100,000 - ₦300,000</option>
+                            <option value="300000-500000">₦300,000 - ₦500,000</option>
+                            <option value="500000-1000000">₦500,000 - ₦1,000,000</option>
+                            <option value="1000000-2000000">₦1,000,000 - ₦2,000,000</option>
+                            <option value="2000000-5000000">₦2,000,000+</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Bedrooms Filter -->
+                    <div class="filter-group">
+                        <label for="bedrooms-filter">Bedrooms</label>
+                        <select id="bedrooms-filter">
+                            <option value="">Any</option>
+                            <option value="1">1 Bedroom</option>
+                            <option value="2">2 Bedrooms</option>
+                            <option value="3">3 Bedrooms</option>
+                            <option value="4">4+ Bedrooms</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Bathrooms Filter -->
+                    <div class="filter-group">
+                        <label for="bathrooms-filter">Bathrooms</label>
+                        <select id="bathrooms-filter">
+                            <option value="">Any</option>
+                            <option value="1">1 Bathroom</option>
+                            <option value="2">2 Bathrooms</option>
+                            <option value="3">3+ Bathrooms</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Amenities Filter -->
+                    <div class="filter-group">
+                        <label>Amenities</label>
+                        <div class="amenities-checkboxes">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="parking" value="parking">
+                                <label for="parking">Parking</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="security" value="security">
+                                <label for="security">Security</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="furnished" value="furnished">
+                                <label for="furnished">Furnished</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pool" value="pool">
+                                <label for="pool">Swimming Pool</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="gym" value="gym">
+                                <label for="gym">Gym</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="wifi" value="wifi">
+                                <label for="wifi">WiFi</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="filter-actions">
+                    <button class="apply-filters" id="apply-filters">Apply Filters</button>
+                    <button class="clear-filters" id="clear-filters">Clear All</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Properties Grid -->
+        <section class="properties-grid-section">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Available Properties</h2>
+                    <div class="results-count">
+                        <span id="results-count">24</span> properties found
+                    </div>
+                </div>
+                
+                <!-- Sort Options -->
+                <div class="sort-options">
+                    <label for="sort-by">Sort by:</label>
+                    <select id="sort-by">
+                        <option value="newest">Newest First</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
+                </div>
+                
+                <!-- Properties Grid -->
+                <div class="cards-grid" id="properties-grid">
+                    <!-- Property cards will be dynamically loaded here -->
+                </div>
+                
+                <!-- Load More Button -->
+                <div class="load-more-wrap">
+                    <button class="load-more" id="load-more">Load More Properties</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============== Footer ============== -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="assets/images/rentimage.jpg" alt="RentMe logo" />
+            </div>
+
+            <div class="footer-links">
+                <h4>Helpful Links</h4>
+                <ul>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="properties.html">Properties</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>Info@rentmenaija.com</p>
+                <p>Support@rentmenaija.com</p>
+            </div>
+
+            <div class="footer-apps">
+                <h4>Download our App</h4>
+                <div class="app-badges">
+                    <img src="assets/images/google.png" alt="Get it on Google Play">
+                    <img src="assets/images/appstore.webp" alt="Download on the App Store">
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; Rentme Naija 2025. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="main.js"></script>
+    <script src="properties.js"></script>
+</body>
+</html>
